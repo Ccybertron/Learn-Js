@@ -26,7 +26,7 @@ console.log(id === anotherId)
 
 const bigNumber = 4623643276401646
  
-Non-Primitive Data Types (Arrays , objects , Funtion)
+// Non-Primitive Data Types (Arrays , objects , Funtion)
 
 const games = ["cricket", " football" , "hockey"]
 console.log(games)
