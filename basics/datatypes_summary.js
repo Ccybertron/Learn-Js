@@ -43,5 +43,23 @@ const myfunction = function() {
 }
 
 
+//memory in js 
+//stack (primitive) , heap (non-primitive)
 
+let myName = "cybertron"
+
+let anotherName = myName
+anotherName = "jumbotran"
+
+console.log(myName)
+console.log(anotherName)
+
+let userOne ={
+    emai:"user@gamil.com"
+}
+
+let userTwo = userOne
+userTwo.emai = "abc@gmail.com"
+console.log(userOne)
+console.log(userTwo)
 
