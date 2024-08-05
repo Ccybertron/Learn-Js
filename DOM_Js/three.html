@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body>
+    
+</body>
+<script>
+   const dev = document.createElement('dev')
+   console.log(dev)
+   dev.className = "main"
+   dev.id = "myID"
+//    div.id = Math.round(Math.random()*10 + 1)
+    dev.setAttribute("title" ,"GENERATED TITLE")
+    dev.style.backgroundColor = "green"
+    dev.style.color = "white"
+    // dev.innerText ="hello world"
+    const addText = document.createTextNode("welcome")
+    dev.appendChild(addText)
+    document.body.appendChild(dev)
+</script>
+</html>

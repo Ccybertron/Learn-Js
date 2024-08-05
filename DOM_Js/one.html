@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <style>
+        .bg-black{
+            background-color:#212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM , Learning</h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis nostrum sunt modi nulla dolores illo corporis officiis explicabo maiores fugiat. Eveniet qui tempora reiciendis asperiores, molestiae maiores earum amet. Provident?</p>
+        <ul><li>one</li></ul>
+        <ul><li class="lsititem">two</li></ul>
+        <ul><li class="lsititem">three</li></ul>
+       
+    </div>
+    <script>
+        const title = document.getElementById('title')
+        title.style.backgroundColor ='red'
+        title.style.textAlign = 'center'
+        // document.getElementById('title').setAttribute('class','test heading')
+
+
+        //accessing elements using query selectors
+        // document.querySelector('h2')  
+        // document.querySelector('#title')
+        // document.querySelector('.heading')
+        const myUnOrderList= document.querySelector('ul')
+        myUnOrderList.style.backgroundColor = 'yellow'
+        myUnOrderList.style.color = 'black'
+        // const ListItem = document.querySelector('li')
+        // ListItem.innerText='1st'
+    //     const ListItem = document.querySelectorAll('li')
+    //    ListItem[1].style.color = 'blue'
+
+       const tempclass = document.getElementsByClassName('lsititem')
+       Array.from(tempclass)
+       const myConArray = Array.from(tempclass)
+
+       myConArray.forEach(function(li){
+        li.style.color= 'orange'
+       })
+
+    </script>
+</body>
+</html>
