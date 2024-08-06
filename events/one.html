@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML , Events</title>
+    <style>
+        #images img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Images</h2>
+    <div>
+        <ul id="images">
+            <li><img src="./images/a.jpeg" alt="" id="a"></li>
+            <li><img src="./images/c.webp" alt="" id="b"></li>
+            <li><img src="./images/d.webp" alt="" id="c"></li>
+            <!-- <li><img src="./images/d.webp" alt="" id="c" onclick="alert('c')"></li> Usually in js Avoid this approach-->
+            <li><img src="./images/e.webp" alt="" id="d"></li>
+            <li><a href="https://www.google.com/" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+        // document.getElementById('c').onclick = function(){
+        //     alert("3rd number book clicked")
+        // }
+
+        // some other approaches
+        //attachEvent()
+        //jQuery
+
+        //best approach (addEventListener)
+
+      
+            //what to read
+            //type , timestamp ,defaultPrevented, Target , srceElement , currenttarget
+            //clientX ,cleintY ,screenX, screenY 
+            // altkey ,ctrkey,shiftkey , keyCode
+
+            //Event propagation
+            //default => false => EventBubbling , in some scenario need to use EventCapturing
+            
+
+        //     document.getElementById('images').addEventListener('click' , function(e){
+        //         console.log("Click inside the ul");
+        //     },false)
+        // document.getElementById('c').addEventListener('click' , function(e){
+        //         console.log("Click 3rd number book");
+        //         e.stopImmediatePropagation()
+        //     },false)
+
+
+        //     document.getElementById('images').addEventListener('click' , function(e){
+        //         console.log("Click inside the ul");
+        //     },true)
+        // document.getElementById('c').addEventListener('click' , function(e){
+        //         console.log("Click 3rd number book");
+        //     },true)
+
+
+            // document.getElementById('google').addEventListener
+            // ('click' , function(e){
+            //     console.log("Google clicked");
+            //     e.preventDefault();
+            //     e.stopPropagation();
+            // },false)
+        
+        document.querySelector('#images').addEventListener('click',function(e){
+            console.log(e.target.tagName);
+            if(e.target.tagName === 'IMG'){
+                console.log(e.target.id);
+                
+                let removeIt = e.target.parentNode
+                removeIt.remove()
+            }
+        },false)
+          
+            // removeIt.parentNode.removeChild(removeIt)
+</script>
+</html>
