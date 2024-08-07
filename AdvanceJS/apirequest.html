@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+    <style>
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            padding: 16px;
+            text-align: center;
+            margin: 20px auto;
+            background-color: #a8a4a4;
+        }
+        .card img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+        }
+        .card h3 {
+            margin: 8px;
+            font-size: 16px;
+            color: #ffff;
+        }
+        .card p {
+            margin: 0;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="card-container"></div>
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/Ccybertron'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            console.log(data)
+            console.log(data.followers)
+
+            const cardContainer = document.getElementById('card-container');
+            const card = document.createElement('div');
+            card.className = 'card';
+            // console.log(card)
+            card.innerHTML = `
+                    <img src="${"https://avatars.githubusercontent.com/u/86141025?v=4"}" alt="Profile Image">
+                    <h3>${data.login}</h3>
+                    <p>Followers: ${data.followers}</p>
+                `;
+
+            cardContainer.appendChild(card);
+
+        }
+    }
+
+
+    xhr.send();
+</script>
+
+</html>
